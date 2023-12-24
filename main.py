@@ -1,7 +1,4 @@
-import threading
-import time
-import sys
-import traceback
+import re
 from typing import Final
 from telegram import Update
 from telegram import Bot
@@ -52,6 +49,8 @@ def handle_message(update: Update, context: CallbackContext):
         update.message.reply_text("anal")
     elif "hola" in text:
         update.message.reply_text(f"Hola @{update.message.from_user.username}")
+    elif "guajiro" in text:
+        update.message.reply_text("Que racista Papu :(")
     elif (
         (update.message.from_user.username == "InfinitumDecay")
         and (len(text) > 5)
@@ -102,7 +101,5 @@ if __name__ == "__main__":
     dp.add_handler(CommandHandler("id", handler_chatId))
     dp.add_handler(CommandHandler("members", get_group_members))
     dp.add_handler(MessageHandler(Filters.text, handle_message))
-
     updater.start_polling()
-
     updater.idle()
