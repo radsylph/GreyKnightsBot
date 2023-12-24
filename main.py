@@ -53,7 +53,7 @@ def handle_message(update: Update, context: CallbackContext):
     elif "hola" in text:
         update.message.reply_text(f"Hola @{update.message.from_user.username}")
     elif (
-        (update.message.from_user.username == "Vanilthas")
+        (update.message.from_user.username == "InfinitumDecay")
         and (len(text) > 5)
         and ("soto" in text)
     ):
@@ -84,10 +84,11 @@ def hanlder_list_participants(update: Update, context: CallbackContext):
 
 def get_group_members(update: Update, context: CallbackContext):
     chat_id = update.message.chat_id
-    members = context.bot.get_chat_members(chatId)
-    for member in members:
-        print(member.user.username)
-        update.message.reply_text(member.user.username)
+    admins = context.bot.get_chat_administrators(chat_id)
+    message = "los miembros del grupo son: \n"
+    for admin in admins:
+        message += "@" + admin.user.username + "\n"
+    update.message.reply_text(message)
 
 
 if __name__ == "__main__":
