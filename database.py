@@ -53,7 +53,7 @@ def consultar_participantes() -> str:
             return "No hay participantes en el grupo"
         mensaje = " Atencion: \n"
         for participante in participantes:
-            mensaje += f"@{participante['nombre']} \n"
+            mensaje += f"{participante['nombre']} \n"
         return mensaje
     except:
         return "No se pudo consultar los participantes"
