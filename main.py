@@ -1,6 +1,8 @@
 import asyncio
 import re
 import sys
+import os
+from random import randint
 from decouple import config
 from typing import Final
 from telegram import Update, Bot
@@ -50,6 +52,10 @@ async def handle_message(update: Update, context: CallbackContext):
         # await update.message.reply_text(handler_list_participants(update, context))
     elif "sexo" in text:
         await update.message.reply_text("anal")
+    elif "agua" in text:
+        audios = os.listdir("audios")
+        audio = open(os.path.join("audios", audios[randint(0, len(audios) - 1)]), "rb")
+        await update.message.reply_audio(audio)
     elif "hola" in text:
         await update.message.reply_text(f"Hola @{update.message.from_user.username}")
     elif "guajiro" in text:
