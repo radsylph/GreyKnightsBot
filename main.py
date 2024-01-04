@@ -3,55 +3,40 @@ import re
 import sys
 import os
 from random import randint
+from decouple import config
 from typing import Final
 from telegram import Update, Bot
-import json
 from telegram.ext import (
-    Updater,
+    Application,
     CommandHandler,
     MessageHandler,
-    Filters,
+    filters,
     CallbackContext,
 )
 
-from database import (
-    agregar_participante,
-    eliminar_participante,
-    consultar_participantes,
-    borrar_todo,
-)
+# from database import (
+#     agregar_participante,
+#     eliminar_participante,
+#     consultar_participantes,
+#     borrar_todo,
+# )
 
-
-TOKEN: Final = "6731060923:AAHXN9u6mtDsi4QjRxhgP20Wq_VOTu38Jxg"
+TOKEN: Final = config("BOT_TOKEN")
 BOTNAME: Final = "@Lord_Emperador_Bot"
 chatId = "-1002126307423"
 
-bot: Bot = Bot(token=TOKEN)
-updater: Updater = Updater(token=TOKEN, use_context=True)
-
-
-def load_json(file):
-    with open(file) as bot_responses:
-        print(f"Loaded {file} successfully")
-        return json.load(bot_responses)
-
-
-response_data = load_json("botMessages.json")
-
-
-def BotMessages(userInput: str) -> str:
-    for response in response_data:
-        if userInput in response["user_input"]:
-            return response["bot_response"]
-
+bot : Bot = Bot(token=TOKEN)
+application : Application = Application.builder().token(TOKEN).build()
 
 # Bot commands
-def Bot_help_commands(update: Update, context: CallbackContext):
-    update.message.reply_text(
+async def Bot_help_commands(update: Update, context: CallbackContext):
+    await update.message.reply_text(
         """
     /ayuda: enseña como usar el bot de forma facil y sencilla
-        /agregar <grupo>: agrega una persona a la base de datos
-        /eliminar <grupo>: elimina una persona de la base de datos 
+    /agregar <nombre> <grupo>: agrega una persona a la base de datos
+    /eliminar <nombre> <grupo>: elimina una persona de la base de datos \U0001f6a8
+    /lista <grupo>: muestra todos los registros de personas en un grupo
+    /reset <grupo>: CUIDADO elimina todos los registros de personas en un grupo \U0001f6a8
     """
     )
 
@@ -59,16 +44,35 @@ def Bot_help_commands(update: Update, context: CallbackContext):
 # Bot Messages
 
 
-def handle_message(update: Update, context: CallbackContext) -> None:
+async def handle_message(update: Update, context: CallbackContext):
     text: str = update.message.text.lower()
     print(update.message.text)
-    response = BotMessages(text)
-    print(response)
-    if response == "event_everyone":
+    if "@everyone" in text:
         print("toditos")
-        response = handler_list_participants(update, context)
-        update.message.reply_text(response)
-    update.message.reply_text(response)
+        # await update.message.reply_text(handler_list_participants(update, context))
+    elif "sexo" in text:
+        await update.message.reply_text("anal")
+    elif "agua" in text:
+        audios = os.listdir("audios")
+        audio = open(os.path.join("audios", audios[randint(0, len(audios) - 1)]), "rb")
+        await update.message.reply_audio(audio)
+    elif "hola" in text:
+        await update.message.reply_text(f"Hola @{update.message.from_user.username}")
+    elif "guajiro" in text:
+        await update.message.reply_text("Que racista Papu :(")
+    elif (
+        (update.message.from_user.username == "InfinitumDecay")
+        and (len(text) > 5)
+        and ("soto" in text)
+    ):
+        print(text)
+        await update.message.reply_text("SOTOOOOO")
+
+
+# def handler_add_participant(update: Update, context: CallbackContext):
+#     nombre = update.message.text.split(" ")[1]
+#     # grupo = update.message.text.split(" ")[2]
+#     update.message.reply_text(agregar_participante(nombre))
 
 
 async def handler_chatId(update: Update, context: CallbackContext):
@@ -76,23 +80,14 @@ async def handler_chatId(update: Update, context: CallbackContext):
     chatId = await update.message.chat_id
 
 
-def handler_add_participant(update: Update, context: CallbackContext):
-    nombre = update.message.text.split(" ")[1]
-    # grupo = update.message.text.split(" ")[2]
-    response = agregar_participante(nombre)
-    update.message.reply_text(response)
+# async def hanlder_delete_participant(update: Update, context: CallbackContext):
+#     nombre = await update.message.text.split(" ")[1]
+#     # grupo = await update.message.text.split(" ")[2]
+#     await update.message.reply_text(eliminar_participante(nombre))
 
 
-def hanlder_delete_participant(update: Update, context: CallbackContext):
-    nombre = update.message.text.split(" ")[1]
-    # grupo = await update.message.text.split(" ")[2]
-    response = eliminar_participante(nombre)
-    update.message.reply_text(response)
-
-
-def handler_list_participants(update: Update, context: CallbackContext):
-    response = consultar_participantes()
-    update.message.reply_text(response)
+# async def handler_list_participants(update: Update, context: CallbackContext):
+#     await update.message.reply_text(consultar_participantes())
 
 
 async def get_group_members(update: Update, context: CallbackContext):
@@ -106,13 +101,12 @@ async def get_group_members(update: Update, context: CallbackContext):
 
 if __name__ == "__main__":
     print("Starting bot")
-    updater.dispatcher.add_handler(CommandHandler("ayuda", Bot_help_commands))
-    updater.dispatcher.add_handler(CommandHandler("agregar", handler_add_participant))
-    updater.dispatcher.add_handler(
-        CommandHandler("eliminar", hanlder_delete_participant)
-    )
-    updater.dispatcher.add_handler(CommandHandler("id", handler_chatId))
-    updater.dispatcher.add_handler(MessageHandler(Filters.text, handle_message))
+    application.add_handler(CommandHandler("ayuda", Bot_help_commands))
+    # application.add_handler(CommandHandler("agregar", handler_add_participant))
+    # application.add_handler(CommandHandler("eliminar", hanlder_delete_participant))
+    # application.add_handler(CommandHandler("everyone", handler_list_participants))
+    application.add_handler(CommandHandler("id", handler_chatId))
+    # application.add_handler(CommandHandler("members", get_group_members))
+    application.add_handler(MessageHandler(filters.TEXT, handle_message))
     print("Polling...")
-    updater.start_polling()
-    updater.idle()
+    application.run_polling(1.0)
