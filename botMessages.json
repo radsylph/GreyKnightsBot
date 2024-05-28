@@ -26,5 +26,19 @@
         "bot_response": "event_everyone",
         "bot_response_type":"text",
         "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["Agua, agua"],
+        "bot_response": "event_agua",
+        "bot_response_type":"audio",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["lol"],
+        "bot_response": "nooooo, si va",
+        "bot_response_type":"audio",
+        "required_words":[]
     }
 ]
