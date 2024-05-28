@@ -1,3 +1,3 @@
-python-telegram-bot==13.7
-pymongo
-
+pymongo==4.6.1
+python-decouple==3.8
+Fatal error in launcher: Unable to create process using '"C:\Users\Usuario\AppData\Local\Programs\Python\Python312\python.exe"  "C:\Users\Usuario\AppData\Local\Programs\Python\Python312\Scripts\pip.exe" install pymongo': El sistema no puede encontrar el archivo especificado.python-telegram-bot==13.7

@@ -1,8 +1,11 @@
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-from decouple import config
 
-url = config("MONGO_URL")
+
+url = (
+    "mongodb+srv://test1:123@cluster0.gpskocw.mongodb.net/?retryWrites=true&w=majority"
+)
+
 
 client = MongoClient(
     url,
@@ -13,7 +16,7 @@ client = MongoClient(
     maxPoolsize=1,
 )
 
-db = client["bot_Emperador"]
+db = client["bot_emperador"]
 collection = db["integrantes"]
 
 
@@ -29,8 +32,8 @@ def agregar_participante(nombre: str) -> str:
         }
         collection.insert_one(nuevo_participante)
         return f"Se agrego el participante {nombre} de forma satisfactoria"
-    except:
-        return "No se pudo agregar el participante"
+    except Exception as e:
+        return "No se pudo agregar el participante" + str(e)
 
 
 def eliminar_participante(nombre: str) -> str:

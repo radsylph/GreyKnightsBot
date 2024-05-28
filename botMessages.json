@@ -1,0 +1,44 @@
+[
+    {
+        "response_type":"user_text",
+        "user_input": ["soto" , "sotooo" , "test"],
+        "bot_response":"SEXOOOOOO",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"greetings",
+        "user_input": ["hola"],
+        "bot_response":"hola puta que quieres",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["sexo" , "sexoo"],
+        "bot_response":"ANALLLL",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["@everyone"],
+        "bot_response": "event_everyone",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["Agua, agua"],
+        "bot_response": "event_agua",
+        "bot_response_type":"audio",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["lol"],
+        "bot_response": "nooooo, si va",
+        "bot_response_type":"audio",
+        "required_words":[]
+    }
+]
