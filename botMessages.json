@@ -219,6 +219,13 @@
         "bot_response": "Por eso no la pones",
         "bot_response_type":"text",
         "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["giorgio", "Giorgio"],
+        "bot_response": "En cabimas",
+        "bot_response_type":"text",
+        "required_words":[]
     }
     
     
