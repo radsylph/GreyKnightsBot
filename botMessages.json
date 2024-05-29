@@ -40,5 +40,98 @@
         "bot_response": "nooooo, si va",
         "bot_response_type":"audio",
         "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["marcial", "m" , "Marcial"],
+        "bot_response": "asco",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["andrea", "Andrea", "Diaz"],
+        "bot_response": "eres maravillosa ❤️❤️❤️",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["pole" , "oro"],
+        "bot_response": "El usuario  @Radsylph ha hecho la pole, co",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["plata", "subpole" , "sub pole"],
+        "bot_response": "El usuario  @Radsylph se ha robado la plata, co",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["bronce"],
+        "bot_response": "El usuario  @Radsylph se ha robado el bronce, co",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        
+        "response_type":"user_text",
+        "user_input": ["nine ropes, polarised light, crow and shomyo, the gap between within and without" , "hollow purple", "kyoshiki murasaki"],
+        "bot_response": "👉🔴🔵👈🤞🟣",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        
+        "response_type":"user_text",
+        "user_input": ["fukuma mizushi"],
+        "bot_response": "⛩️🏯🙏🏻",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        
+        "response_type":"user_text",
+        "user_input": ["react", "React" , "REACT", "riat", "Riat"],
+        "bot_response": "el framework favorito de @DazedLithium ",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    
+    {
+        
+        "response_type":"user_text",
+        "user_input": ["nueve once", "9/11" , "911", "9" , "11"],
+        "bot_response": "🏢🏢💥🛩",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["Desde el primer momento en que sus miradas se cruzaron, Andrés y Marcial sintieron una conexión especial. Marcial se acercó a la mesa de Andrés y comenzaron a conversar como si fueran viejos amigos. Descubrieron que tenían muchas cosas en común: ambos amaban el arte, la música y los libros. A medida que pasaban más tiempo juntos, Andrés y Marcial se dieron cuenta de que su amistad estaba floreciendo en algo más profundo. Sus conversaciones se volvieron más íntimas y sus corazones latían al unísono cuando estaban juntos. Se encontraban en un mundo aparte, donde solo existían ellos dos y su amor creciente. Una noche, bajo la luz de las estrellas, Andrés tomó la mano de Marcial y le confesó sus sentimientos. Marcial lo miró a los ojos y le dijo que también lo amaba. Fue un momento mágico, lleno de promesas de un futuro juntos. Desde entonces, Andrés y Marcial vivieron un romance apasionado y lleno de aventuras. Juntos exploraron la ciudad, se perdieron en museos y galerías de arte, y se inspiraron mutuamente en sus pasiones creativas. Su amor era como una obra de arte en constante evolución, siempre cambiante y siempre hermosa. Andrés y Marcial sabían que estaban destinados a estar juntos, que su amor era eterno y que nada ni nadie podría separarlos. Y así, Andrés Álvarez y Marcial escribieron juntos una historia de amor que perduraría para siempre en las páginas del tiempo. Una historia de dos almas gemelas que se encontraron en un café del centro de la ciudad y descubrieron que estaban destinadas a amarse por toda la eternidad."
+],
+        "bot_response":"Quiero dedicar unas palabras para alguien que marcó mucho en mí en el inicio de mi adolescencia (incluso mi infancia) y hasta el día de hoy lo sigue haciendo, hoy él partió por decisión propia, y en mi y los demás 'soldiers' quedaran todos esos recuerdos, como cada frase nos identificaba y nos daba una salida para alguna situacion, me hizo encontrar 'A place for my head' y cuando quería 'Runaway' y escapar simplemente lo hacia con esas canciones y -'escapaba sin decir adiós, quería respuestas y no mas mentiras, quería cerrar la puerta y abrir mi mente'. Es curioso como puedo puedo hacer algo en su memoria citando sus letras por como me marcaron y me hicieron lo que soy hoy, cuando sentia que nadie me escuhaba 'Faint' se convirtió en un himno y como el decía 'you wanna listen to me, like it or not right now' y lo logró, se sigue haciendo escuchar después de su muerte 'i Can't heal' 'i can't feel'. 'Given up' Su grito de 17 segundos me dejaba sin aire y esa era una de las razones por las que te convertiste en uno de los mejores cantantes de metal, no importa que puesto tengas, cantantes hay por montón y entrar siquiera al top 100 es demasiado, estar entre los mejores 50 dice mucho 'but in the end it doesn't even matters', y ahora estas en 'Roads untraveled' 'Cause beyond every bend",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["Andrés Álvarez, un estudiante brillante de ingeniería en computación, se encontraba emocionado y aliviado después de finalmente defender su tesis en la Universidad Rafael Urdaneta; a sus 20 años, había logrado graduarse en 11 trimestres, demostrando su dedicación y habilidades académicas; durante su tiempo en la universidad, había compartido clases con un grupo de compañeros que se habían convertido en su familia: Fernando Parta, de 22 años, un apasionado por la programación; César Palacios, de 24 años, un talentoso diseñador de software; Andrea, la joven con el pelo azul de 21 años, conocida por su creatividad y entusiasmo; Giorgio Baglieri y El Chino, ambos de 21 años, expertos en ciberseguridad; la relación entre Andrés y Marcial Hernández, el estudiante con un pasado turbio, había despertado la curiosidad y preocupación de sus amigos; Fernando, siempre dispuesto a ayudar a sus compañeros, decidió investigar el pasado de Marcial para proteger a Andrés; César, con su aguda inteligencia, ideó un plan para confrontar a Marcial y asegurarse de que no lastimara a su amigo; Andrea, con su intuición y empatía, notó la conexión especial entre Andrés y Marcial y se convirtió en la confidente de ambos, ofreciéndoles consejos y apoyo incondicional; mientras tanto, Giorgio y El Chino mantenían vigilancia constante sobre Marcial, preocupados por la seguridad de Andrés; descubrieron secretos oscuros que ponían en peligro la estabilidad emocional de todos los involucrados; con valentía y determinación, decidieron confrontar a Marcial y desentrañar la verdad detrás de sus acciones pasadas; la tensión crecía entre los amigos mientras intentaban proteger a Andrés y enfrentar los desafíos que se interponían en el camino de su felicidad; los sentimientos encontrados, las lealtades puestas a prueba y los secretos revelados amenazaban con cambiar el curso de sus vidas para siempre; en medio de esta intriga emocional, el romance entre Andrés Álvarez y Marcial Hernández se veía envuelto en un torbellino de emociones intensas y decisiones difíciles; ¿podrían los amigos unirse para proteger a sus seres queridos y superar juntos los obstáculos que se avecinaban, o la verdad oculta del pasado sería demasiado devastadora para superar? Solo el tiempo lo diría."
+],
+        "bot_response":"Quiero dedicar unas palabras para alguien que marcó mucho en mí en el inicio de mi adolescencia (incluso mi infancia) y hasta el día de hoy lo sigue haciendo, hoy él partió por decisión propia, y en mi y los demás 'soldiers' quedaran todos esos recuerdos, como cada frase nos identificaba y nos daba una salida para alguna situacion, me hizo encontrar 'A place for my head' y cuando quería 'Runaway' y escapar simplemente lo hacia con esas canciones y -'escapaba sin decir adiós, quería respuestas y no mas mentiras, quería cerrar la puerta y abrir mi mente'. Es curioso como puedo puedo hacer algo en su memoria citando sus letras por como me marcaron y me hicieron lo que soy hoy, cuando sentia que nadie me escuhaba 'Faint' se convirtió en un himno y como el decía 'you wanna listen to me, like it or not right now' y lo logró, se sigue haciendo escuchar después de su muerte 'i Can't heal' 'i can't feel'. 'Given up' Su grito de 17 segundos me dejaba sin aire y esa era una de las razones por las que te convertiste en uno de los mejores cantantes de metal, no importa que puesto tengas, cantantes hay por montón y entrar siquiera al top 100 es demasiado, estar entre los mejores 50 dice mucho 'but in the end it doesn't even matters', y ahora estas en 'Roads untraveled' 'Cause beyond every bend",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        
+        "response_type":"user_text",
+        "user_input": ["sabes que es lo peor"],
+        "bot_response": "Que yo no soy ningun perro 🐕",
+        "bot_response_type":"text",
+        "required_words":[]
     }
+    
 ]
