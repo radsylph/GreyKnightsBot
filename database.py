@@ -75,3 +75,20 @@ def borrar_todo(grupo: str) -> str:
     return (
         f"Se borraron todos los participantes del grupo {grupo} de forma satisfactoria"
     )
+
+def ship_participantes() -> str:
+    couple = []
+    try:
+        participante = collection.find()
+        if participante is None:
+            return "No hay participantes en el grupo"
+        for participante in participante:
+            random.shuffle(participante)
+            couple.append(participante["nombre"])
+            if(len(couple) == 2):
+                return couple
+            else:
+                continue
+    except:
+        return "No se pudo consultar los participantes"
+        

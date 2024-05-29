@@ -19,6 +19,7 @@ from database import (
     eliminar_participante,
     consultar_participantes,
     borrar_todo,
+    ship_participantes
 )
 
 async def handler_chatId(update: Update, context: CallbackContext):
@@ -84,6 +85,12 @@ def handle_message(update: Update, context: CallbackContext) -> None:
             update.message.reply_audio(audio=open(audio_file_path, 'rb'))
         else:
             update.message.reply_text("El audio no se encuentra disponible.")
+    elif response["bot_response_type"] == "image":
+        image_file_path = f'images/{response["bot_response"]}'
+        if os.path.exists(image_file_path):
+            update.message.reply_photo(photo=open(image_file_path, 'rb'))
+        else:
+            update.message.reply_text("La imagen no se encuentra disponible.")
     elif response["bot_response"] == "event_everyone":
         handler_list_participants(update, context)
     elif response["bot_response"] == 'event_blackFlash':

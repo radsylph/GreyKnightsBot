@@ -226,6 +226,13 @@
         "bot_response": "En cabimas",
         "bot_response_type":"text",
         "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["ashbaby"],
+        "bot_response": "ashbaby.jpg",
+        "bot_response_type":"image",
+        "required_words":[]
     }
     
     
