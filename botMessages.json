@@ -36,9 +36,16 @@
     },
     {
         "response_type":"user_text",
+        "user_input": ["black flash", "kokusen"],
+        "bot_response": "test.mp3",
+        "bot_response_type":"audio",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
         "user_input": ["lol"],
         "bot_response": "nooooo, si va",
-        "bot_response_type":"audio",
+        "bot_response_type":"text",
         "required_words":[]
     },
     {
@@ -132,6 +139,87 @@
         "bot_response": "Que yo no soy ningun perro 🐕",
         "bot_response_type":"text",
         "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["cesar" , "caesar" , "Cesar", "Caesar"],
+        "bot_response": "@cesarpalaciosr todo un fornicador",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["odio" , "te odio" , "los odio"],
+        "bot_response": "no seas malo, por que si eres malo no eres bueno y si no eres bueno eres malo.",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["melee","vindland saga", "vinland" , "Vindland","vagabond","Vagabond","Warframe","normie","Normie","paramore","Paramore","full metal alchemist","FMA","fma","FMAB",
+    "fmab" ],
+        "bot_response": "Que @DazedLithium que ?",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["angular", "Angular" , "Angular.js" , "angular.js"],
+        "bot_response": "el framework favorito de @poteleche ",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["angular","sims 4" ,"los sims", "sims", "los sims", "legumias","leguminosas",
+        "potreros"],
+        "bot_response": "que @CaramelosDeCianuro que ?",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["itachi", "Itachi"],
+        "bot_response": "MI PAPAAAAA ❤️❤️❤️",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["gojo", "Gojo"],
+        "bot_response": "Mi bbsito",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["suguru"],
+        "bot_response": "the ways in which you talk to me",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["satoru"],
+        "bot_response": "Had me wishing I were gone",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["melee","vindland saga", "vinland" , "Vinland","vagabond","Vagabond","warframe","normie","Normie","paramore","Paramore","full metal alchemist","FMA","fma","FMAB",
+    "fmab", "kh" ],
+        "bot_response": "Que @DazedLithium que ?",
+        "bot_response_type":"text",
+        "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["espantaviejas"],
+        "bot_response": "Por eso no la pones",
+        "bot_response_type":"text",
+        "required_words":[]
     }
+    
     
 ]
