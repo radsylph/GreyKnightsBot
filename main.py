@@ -40,6 +40,10 @@ def handler_list_participants(update: Update, context: CallbackContext):
     response = consultar_participantes()
     update.message.reply_text(response)
 
+def handler_shipping(update: Update, context: CallbackContext):
+    response = ship_participantes()
+    update.message.reply_text(response)
+
 TOKEN: Final = "6731060923:AAHXN9u6mtDsi4QjRxhgP20Wq_VOTu38Jxg"
 BOTNAME: Final = "@Lord_Emperador_Bot"
 chatId = "-1002126307423"
@@ -58,6 +62,10 @@ def BotMessages(userInput: str):
     for response in response_data:
         if userInput in response["user_input"]:
             return response
+        for word in response["required_words"]:
+            if word in userInput:
+                return response
+    return None
 
 # Bot commands
 def Bot_help_commands(update: Update, context: CallbackContext):
@@ -113,6 +121,7 @@ if __name__ == "__main__":
     updater.dispatcher.add_handler(CommandHandler("lista", handler_list_participants))
     updater.dispatcher.add_handler(CommandHandler("eliminar", handler_delete_participant))
     updater.dispatcher.add_handler(CommandHandler("id", handler_chatId))
+    updater.dispatcher.add_handler(CommandHandler("shipping", handler_shipping))
     updater.dispatcher.add_handler(MessageHandler(Filters.text, handle_message))
     print("Polling...")
     updater.start_polling()
