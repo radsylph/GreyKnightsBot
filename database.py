@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
+import random
 
 
 url = (
@@ -77,18 +78,21 @@ def borrar_todo(grupo: str) -> str:
     )
 
 def ship_participantes() -> str:
-    couple = []
     try:
-        participante = collection.find()
-        if participante is None:
-            return "No hay participantes en el grupo"
-        for participante in participante:
-            random.shuffle(participante)
-            couple.append(participante["nombre"])
-            if(len(couple) == 2):
-                return couple
-            else:
-                continue
-    except:
-        return "No se pudo consultar los participantes"
+        participantes = list(collection.find())
         
+        if not participantes or len(participantes) < 2:
+            return "No hay suficientes participantes en el grupo"
+        
+        random.shuffle(participantes)
+        
+        couple = random.sample(participantes, 2)
+    
+        nombres = [participante["nombre"] for participante in couple]
+        return f"La pareja seleccionada es: {nombres[0]} y {nombres[1]}"
+    
+    except Exception as e:
+        return "No se pudo consultar los participantes: " + str(e)
+        
+print(ship_participantes())
+#print(consultar_participantes())
