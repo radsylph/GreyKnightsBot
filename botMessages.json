@@ -1,8 +1,8 @@
 [
     {
         "response_type":"user_text",
-        "user_input": ["soto"],
-        "bot_response":"SEXOOOOOO",
+        "user_input": ["soto", "virginia" , "diaz"],
+        "bot_response":"bastaaa",
         "bot_response_type":"text",
         "required_words":[]
     },
@@ -59,27 +59,6 @@
         "response_type":"user_text",
         "user_input": ["andrea", "Andrea", "Diaz"],
         "bot_response": "eres maravillosa ❤️❤️❤️",
-        "bot_response_type":"text",
-        "required_words":[]
-    },
-    {
-        "response_type":"user_text",
-        "user_input": ["pole" , "oro"],
-        "bot_response": "El usuario  @Radsylph ha hecho la pole, co",
-        "bot_response_type":"text",
-        "required_words":[]
-    },
-    {
-        "response_type":"user_text",
-        "user_input": ["plata", "subpole" , "sub pole"],
-        "bot_response": "El usuario  @Radsylph se ha robado la plata, co",
-        "bot_response_type":"text",
-        "required_words":[]
-    },
-    {
-        "response_type":"user_text",
-        "user_input": ["bronce"],
-        "bot_response": "El usuario  @Radsylph se ha robado el bronce, co",
         "bot_response_type":"text",
         "required_words":[]
     },
@@ -259,10 +238,33 @@
     {
         "response_type":"user_text",
         "user_input": ["kaizoku oni ore wa naru"],
-        "bot_response": "",
+        "bot_response": "weAre.mp3",
         "bot_response_type":"audio",
         "required_words":[]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": ["todo un fornicador"],
+        "bot_response": "que @cesarpalaciosr que?",
+        "bot_response_type":"text",
+        "required_words":["fornicador"]
     }
+    ,
+    {
+        "response_type":"user_text",
+        "user_input": [""],
+        "bot_response": "el culo te explota jajja",
+        "bot_response_type":"text",
+        "required_words":["compota"]
+    },
+    {
+        "response_type":"user_text",
+        "user_input": [""],
+        "bot_response": "Im not a big fan of the goverment",
+        "bot_response_type":"text",
+        "required_words":["30"]
+    }
+
 
 
     
