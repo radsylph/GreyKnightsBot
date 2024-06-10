@@ -18,7 +18,7 @@
       };
         onStart = {
           install =
-          "python -m venv .venv         && source .venv/bin/activate";
+          "python -m venv .venv         && source .venv/bin/activate && python main.py";
         };
       # To run something each time the workspace is (re)started, use the `onStart` hook
     };
