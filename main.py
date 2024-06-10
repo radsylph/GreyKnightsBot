@@ -81,7 +81,12 @@ def Bot_help_commands(update: Update, context: CallbackContext):
 # Bot Messages
 def handle_message(update: Update, context: CallbackContext) -> None:
     text: str = update.message.text.lower()
+    user = update.message.from_user
+    print(user)
     response = BotMessages(text)
+    
+    if(user['username'] == 'EAMR0811'):
+        return
     if not response:
         return
 
