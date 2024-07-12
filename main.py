@@ -22,6 +22,54 @@ from database import (
     ship_participantes
 )
 
+def handler_mute_participant(update: Update, context: CallbackContext):
+    user = update.message.from_user
+    if(user['username'] != 'Radsylph'): 
+        update.message.reply_text("Solo el verdadero admin puede hacer esto")
+        return
+    #user_id = update.message.reply_to_message.from_user.id
+    user = update.message.text.split(" ")[1]
+    user_id = update.message.reply_to_message.from_user.id
+    chat_id = update.message.chat_id
+    context.bot.restrict_chat_member(
+        chat_id,
+        user_id,
+        permissions={
+            'can_send_messages': False,
+            'can_send_media_messages': False,
+            'can_send_polls': False,
+            'can_send_other_messages': False,
+            'can_add_web_page_previews': False,
+            'can_change_info': False,
+            'can_invite_users': False,
+            'can_pin_messages': False
+        }
+    )
+    update.message.reply_text(f"Usuario @{update.message.reply_to_message.from_user.username} ha sido muteado.")
+
+def handler_unmute_participant(update: Update, context: CallbackContext):
+    if(user['username'] != 'Radsylph'): 
+        update.message.reply_text("Solo el verdadero admin puede hacer esto")
+        return
+    user_id = update.message.reply_to_message.from_user.id
+    chat_id = update.message.chat_id
+    context.bot.restrict_chat_member(
+        chat_id,
+        user_id,
+        permissions={
+            'can_send_messages': True,
+            'can_send_media_messages': True,
+            'can_send_polls': True,
+            'can_send_other_messages': True,
+            'can_add_web_page_previews': True,
+            'can_change_info': False,
+            'can_invite_users': False,
+            'can_pin_messages': False
+        }
+    )
+    update.message.reply_text(f"Usuario @{update.message.reply_to_message.from_user.username} ha sido desmuteado.")
+
+
 async def handler_chatId(update: Update, context: CallbackContext):
     await update.message.reply_text(f"el chat id es: {update.message.chat_id}")
     chatId = update.message.chat_id
@@ -84,12 +132,10 @@ def handle_message(update: Update, context: CallbackContext) -> None:
     user = update.message.from_user
     print(user)
     response = BotMessages(text)
-    
     if(user['username'] == 'EAMR0811'):
         return
     if not response:
         return
-
     if response["bot_response_type"] == "text":
         update.message.reply_text(response["bot_response"])
     elif response["bot_response_type"] == "audio":
@@ -104,12 +150,12 @@ def handle_message(update: Update, context: CallbackContext) -> None:
             update.message.reply_photo(photo=open(image_file_path, 'rb'))
         else:
             update.message.reply_text("La imagen no se encuentra disponible.")
-    elif response["bot_response"] == "event_everyone":
-        handler_list_participants(update, context)
     elif response["bot_response"] == 'event_blackFlash':
         audios = os.listdir("audios")
         audio = 'audios/test.mp3'
         update.message.reply_audio(audio=open(audio, 'rb'))
+    elif response["bot_response"] == 'event_everyone':
+        update.message.reply_text(handler_list_participants(update, context))
 
 async def get_group_members(update: Update, context: CallbackContext):
     chat_id = update.message.chat_id
@@ -127,7 +173,10 @@ if __name__ == "__main__":
     updater.dispatcher.add_handler(CommandHandler("eliminar", handler_delete_participant))
     updater.dispatcher.add_handler(CommandHandler("id", handler_chatId))
     updater.dispatcher.add_handler(CommandHandler("shipping", handler_shipping))
+    updater.dispatcher.add_handler(CommandHandler("mute", handler_mute_participant))
+    updater.dispatcher.add_handler(CommandHandler("unmute", handler_unmute_participant))
     updater.dispatcher.add_handler(MessageHandler(Filters.text, handle_message))
     print("Polling...")
     updater.start_polling()
     updater.idle()
+
